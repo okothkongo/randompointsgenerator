@@ -1,8 +1,8 @@
 # RandomPointsGenerator
 
-This application creates users with points 0 when server starts and then update each user's points with random numbers which are between 0 and 100 after every  minute.
+This application creates users with 0 points  when the server starts and then updates each user's points with random numbers which are between 0 and 100 after every  minute.
 
-It allows users to make requests whose response is json object contains users and timestamp.
+It allows users to make requests whose response is a json object containing users and timestamp.
 
 ## Setting up the project
 
@@ -36,7 +36,7 @@ Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
 ## Response
 
-The response is a json  object with containing timestamp and an array of users objects like so:
+The response is a json  object that contains a timestamp and an array of user's objects like so:
 
 ```json
 {"timestamp":null,
@@ -48,7 +48,7 @@ The response is a json  object with containing timestamp and an array of users o
 
 1. ### timestamp
 
-The timestamp is a string, the value of this is a datetime in this format `yyyy-mm-dd hh:mm:sec`
+The timestamp is a string, the value of this timestamp is a datetime in this format `yyyy-mm-dd hh:mm:sec`
 
 This time is UTC based.
 
@@ -62,8 +62,8 @@ On  initial request  the value of timestamp is `null` like so:
 }
 ```
 
-On any other consecutive requests, the value of timestamp latest request will be the value of
-of time previous request request was made. For instance when you did  a request on was
+On any other consecutive requests, the value of the timestamp of the latest request will be the value of
+of time previous request request was made. For instance when you did  a request on 
 `2020-07-30 17:09:33` and you did another request at `2021-10-30 20:00:00` .
 
 The response will be like so:
@@ -80,9 +80,9 @@ The response will be like so:
 
 users is an array of objects with each contain user details, their id and points which are both numbers(integers).
 
-This array can have only of  maximum of two object, meaning it contain 0, 1, or two users objects.
+This array can have only of  maximum of two object, meaning it contain 0, 1, or two user's objects.
 
-The value of users object is determined by two things:
+The value of user's object is determined by two things:
 
 i. random number used to update each user
 
@@ -90,9 +90,9 @@ ii. random number used to query the database
 
 ### i. random number used to update each user
 
-After every minute points of each user in the database is updated to a  random number whose value range between 0 and 100,the points of each user may remain the same or change depending of value of the random number used.
+After every minute points of each user in the database is updated to a  random number whose value ranges between 0 and 100,the points of each user may remain the same or change depending of value of the random number used.
 
-This will greatly affect value on users object, on request made on minute after the previous request.
+This will greatly affect values on users object, on requests made on minute after the previous request.
 
 ### ii. random number used to query the database
 
